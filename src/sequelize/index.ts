@@ -6,7 +6,7 @@ export const sequelizeCrud = <I extends string | number, R extends Model>(
 ): Omit<Actions<I, R>, 'search'> => {
   const _model: any = model // TODO: how to correctly type this???
   return {
-    create: async body => _model.create(body),
+    create: async (body: any) => _model.create(body),
     update: async (id, body) => {
       const record = await _model.findByPk(id)
       if (!record) {

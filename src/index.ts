@@ -8,7 +8,7 @@ import { destroy, Destroy } from './delete'
 
 export interface Actions<I extends string | number, R> {
   getOne: GetOne<R> | null
-  create: Create<I, R> | null
+  create: any | null
   destroy: Destroy | null
   update: Update<R> | null
   getList: GetList<R> | null
